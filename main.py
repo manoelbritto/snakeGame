@@ -12,9 +12,15 @@ for _ in range (3):
     square = Turtle()
     square.shape("square")
     square.color("white")
+    square.penup()
     square.setposition(x_position, 0)
     x_position -= 20
     square_objects.append(square)
+
+game_is_on = True
+while game_is_on:
+    for seg in square_objects:
+        seg.forward(20)
 
 print (square_objects)
 screen.exitonclick()
