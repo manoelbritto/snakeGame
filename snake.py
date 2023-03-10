@@ -25,3 +25,15 @@ class Snake:
             new_y = self.square_objects[seg_num - 1].ycor()
             self.square_objects[seg_num].goto(new_x, new_y)
         self.square_objects[0].forward(MOVE_DISTANCE)
+
+    def up (self):
+        self.square_objects[0].setheading(90)
+
+    def down (self):
+        self.square_objects[0].setheading(270)
+
+    def left (self):
+        self.square_objects[0].setheading(180)
+
+    def right (self):
+        self.square_objects[0].setheading(0)
