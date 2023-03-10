@@ -1,26 +1,22 @@
-from turtle import Turtle, Screen
+from turtle import Screen
+from snake import Snake
+import time
 
 screen = Screen()
 screen.setup(width=600, height=600)
+screen.tracer(0)
 
 screen.bgcolor("black")
 screen.title("My Snake Game")
 
-square_objects = []
-x_position = 0
-for _ in range (3):
-    square = Turtle()
-    square.shape("square")
-    square.color("white")
-    square.penup()
-    square.setposition(x_position, 0)
-    x_position -= 20
-    square_objects.append(square)
+snake = Snake()
+
 
 game_is_on = True
 while game_is_on:
-    for seg in square_objects:
-        seg.forward(20)
+    screen.update()
+    time.sleep(0.1)
 
-print (square_objects)
+    snake.move()
+
 screen.exitonclick()
